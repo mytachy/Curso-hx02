@@ -1,0 +1,61 @@
+@import "../molecules/header-peq"
+header
+  background: 
+    image: url("../images/fundo-pagina-portfolio.jpg") !important
+
+
+section.portfolio
+    ul
+      +clearfix
+      +make-row
+      li
+        +make-sm-column(3)
+        +make-xs-column(6)
+        overflow: hidden
+        margin-bottom: 30px
+
+        figure
+          position: relative
+          background-color: $branco
+
+          &:hover
+            a
+              +opacity(1)
+
+            .overlay
+              top: 0
+
+          img
+            +img-responsive()
+          figcaption
+            a
+              text-align: center
+              text-transform: uppercase
+              position: absolute
+              color: $branco
+              width: 100%
+              top: 40%
+              +opacity(0)
+              z-index: 2
+
+              h3
+                +font-size(22px)
+                margin: 0
+
+              p
+                +font-size(18px)
+
+            a,
+            .overlay
+              +transition(.3s)
+
+            .overlay
+              display: block
+              width: 100%
+              height: 100%
+              position: absolute
+              top: 100%
+              left: 0
+              +gradient(60deg, $verde, $azul)
+              +opacity(.8)
+              z-index: 1
